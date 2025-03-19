@@ -1,0 +1,37 @@
+.scale {
+    transition:  0.3s ;
+}
+
+.scale:hover{
+scale: 1.1;
+}
+
+.scale:active {
+    scale: 1.05;
+}
+
+.scale2 {
+    transition:  0.3s ;
+}
+
+
+.scale2:active {
+    scale: 1.05;
+}
+
+
+.Easy{
+    color: rgb(12, 70, 12);
+    background-color: rgb(165, 228, 152);
+    border: 2px solid rgb(6, 78, 6);
+}
+.Medium{
+    color: goldenrod;
+    background-color: rgb(221, 220, 153);
+    border: 2px solid goldenrod;
+}
+.Hard{
+    color: rgb(121, 8, 8);
+    background-color: rgb(241, 128, 128);
+    border: 2px solid rgb(121, 8, 8);
+}
