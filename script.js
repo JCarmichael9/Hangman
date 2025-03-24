@@ -72,7 +72,10 @@ function startGame(level) {
     document.getElementById('difficultyBox').classList.remove('d-none')
     document.getElementById('difficultyBox').classList.add('d-block')
     document.getElementById('difficultySelection').classList.add('d-none')
+    document.getElementById('slippityDissapearrity').classList.add('d-none')
+    document.getElementById('slippityDissapearrity').classList.remove('d-inline-block')
     document.getElementById('letterInput').focus()
+ 
 }
 
 function getRandomWord(level) {
@@ -127,7 +130,7 @@ function guessLetter() {
 function updateWrongGuess(guessedLetter) {
     wrongGuesses++
     document.getElementById('wrongLetters').textContent += `${guessedLetter}`
-    document.getElementById('shamrock').src = `imgs/shamrock${6-wrongGuesses}.jpg`
+    document.getElementById('shamrock').src = `imgs/shamrock${6 - wrongGuesses}.jpg`
 
     if (wrongGuesses === maxMistakes) {
         endGame(false)
@@ -135,5 +138,15 @@ function updateWrongGuess(guessedLetter) {
 }
 
 function updateCorrectGuess(guessedLetter) {
-    
+    let newDisplayedWord = ''
+    for (let i = 0; i < selectedWord.length; i++) {
+        if (selectedWord[i] === guessedLetter) {
+            newDisplayedWord += guessedLetter
+        } else {
+            newDisplayedWord += displayWord[i]
+        }
+    }
+displayWord = newDisplayedWord
+updateUI()
+
 }

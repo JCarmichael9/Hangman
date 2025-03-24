@@ -94,6 +94,13 @@ body {
     }
 }
 
+.slippitySlide {
+    position: absolute;
+    bottom: 0;
+    font-family: "usurp", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .idk {
     color: gold;
@@ -101,4 +108,19 @@ body {
 
 .form-control:hover, .form-control:active, .form-control:focus {
     box-shadow: none;
+}
+
+#difficultySelection {
+    animation: appear 1s forwards;
+    opacity: 0;
+    animation-delay: 4s;
+
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
 }
