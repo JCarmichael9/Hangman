@@ -97,7 +97,7 @@ function updateUI() {
 
 function guessLetter() {
     let inputField = document.getElementById('letterInput')
-    let guessedLetter = inputField.ariaValueMax.toLowerCase()
+    let guessedLetter = inputField.value.toLowerCase()
 
     if (!guessedLetter.match(/^[a-z]$/)) {
         alert('Please enter a valid letter (A-Z), do it for LeGoat')
@@ -122,4 +122,18 @@ function guessLetter() {
     inputField.value = ''
     document.getElementById('letterInput').focus()
 
+}
+
+function updateWrongGuess(guessedLetter) {
+    wrongGuesses++
+    document.getElementById('wrongLetters').textContent += `${guessedLetter}`
+    document.getElementById('shamrock').src = `imgs/shamrock${6-wrongGuesses}.jpg`
+
+    if (wrongGuesses === maxMistakes) {
+        endGame(false)
+    }
+}
+
+function updateCorrectGuess(guessedLetter) {
+    
 }

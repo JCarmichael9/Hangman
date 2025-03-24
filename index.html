@@ -16,9 +16,14 @@
 <body>
     <div class="container d-flex justify-content-center align-items-center big">
         <div class="container text-center d-inline-block">
-            <h1 class="my-4 text-white display-2">Don't Let LeBron Fall</h1>
+            <p class="my-4 text-white display-2">
+            <div class="slide1 d-inline-block mx-2 display-2">Don't</div>
+            <div class="slide2 d-inline-block mx-2 display-2"> Let</div>
+            <div class="slide3 d-inline-block mx-2 display-2"> LeBron</div>
+            <div class="slide4 d-inline-block mx-2 display-2"> Fall</div>
+            </p>
             <div id="difficultySelection">
-                <h3 class="text-white display-4">Select Difficulty:</h3>
+                <h3 class="text-white display-4 idk">Select Difficulty:</h3>
                 <button
                     class="btn btn-transparent difficulty-btn text-success border border-1 border-success rounded scale mx-2"
                     onclick="startGame('Easy')">
@@ -43,7 +48,7 @@
                         class="form-control d-inline-block w-auto mx-3 rounded bg-transparent border border-1 border-white text-white text-center ">
                     <button id="guessBtn"
                         class="btn btn-transparent difficulty-btn text-warning border border-1 border-warning rounded scale2"
-                        onclick="guessLetter">
+                        onclick="guessLetter()">
                         Guess
                     </button>
                 </div>
