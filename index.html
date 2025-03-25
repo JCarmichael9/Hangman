@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    
-    <div class="container d-flex justify-content-center align-items-center big">
-        <div class="container text-center d-inline-block">
+
+    <div class="container d-flex justify-content-center align-items-center big" id="bigcontainer1">
+        <div class="container text-center d-inline-block" id="bigcontainer2">
             
             <div id="difficultySelection">
                 <h3 class=" display-4 idk">Select Difficulty:</h3>
@@ -37,12 +37,12 @@
                     Hard
                 </button>
             </div>
-            <div id="difficultyBox" class="mt-4 p-3 fw-bold d-none box"></div>
-            <div id="gameArea" class="mt-4 d-none">
-                <h2 id="wordDisplay" class="mb-3 text-white"></h2>
-                <div class="mb-3 d-flex text-align-center justify-content-center">
+            <div id="difficultyBox" class="mt-4 p-3 fw-bold d-none box mx-3 "></div>
+            <div id="gameArea" class="mt-4 d-none mx-3">
+                <h2 id="wordDisplay" class="mb-3 ms-5 text-white "></h2>
+                <div class="mb-3 d-flex text-align-start justify-content-start">
                     <input type="text" id="letterInput" maxlength="1" placeholder="Guess a letter"
-                        class="form-control d-inline-block w-auto mx-3 rounded bg-transparent border border-1 border-white text-white text-center ">
+                        class="form-control d-inline-block w-auto me-3 rounded bg-transparent border border-1 border-white text-white text-center ">
                     <button id="guessBtn"
                         class="btn btn-transparent difficulty-btn text-warning border border-1 border-warning rounded scale2"
                         onclick="guessLetter()">
@@ -51,7 +51,7 @@
                 </div>
                 <p id="wrongLetters" class="fw-bold text-danger">Wrong Guesses:</p>
 
-                <img src="image6.jpeg" id="shamrock" class="shamrock-img" />
+                
                 <div class="mt-4">
                     <button id="restartBtn"
                         class="btn btn-transparent difficulty-btn text-danger border border-1 border-danger rounded scale2"
@@ -68,6 +68,9 @@
         <div class="slide3 d-inline-block mx-2 display-2" id="slippityDissapearrity"> LeBron</div>
         <div class="slide4 d-inline-block mx-2 display-2" id="slippityDissapearrity"> Fall</div>
     </div>
+    <div class="pic d-none" id="pic">
+    <img src="image6.jpeg" id="shamrock" class="shamrock-img" />
+</div>
     <footer>
         <!-- place footer here -->
     </footer>

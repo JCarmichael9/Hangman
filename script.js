@@ -74,7 +74,14 @@ function startGame(level) {
     document.getElementById('difficultySelection').classList.add('d-none')
     document.getElementById('slippityDissapearrity').classList.add('d-none')
     document.getElementById('slippityDissapearrity').classList.remove('d-inline-block')
+    document.getElementById('bigcontainer1').classList.add('justify-content-start')
+    document.getElementById('bigcontainer1').classList.remove('justify-content-center')
+    document.getElementById('bigcontainer2').classList.add('text-start')
+    document.getElementById('bigcontainer2').classList.remove('text-center')
+    document.getElementById('bigcontainer1').classList.add('ms-0')
+    document.getElementById('bigcontainer2').classList.add('ms-0')
     document.getElementById('letterInput').focus()
+    document.getElementById('pic').classList.remove('d-none')
  
 }
 
@@ -150,3 +157,21 @@ displayWord = newDisplayedWord
 updateUI()
 
 }
+
+function endGame(won) {
+    setTimeout(() => alert(message), 100)
+
+}
+
+function restartGame() {
+    location.reload()
+}
+
+
+document.getElementById('letterInput').addEventListener('keydown', function (event) {
+
+    if (event.key === 'Enter') {
+        guessLetter()
+    }
+})
+

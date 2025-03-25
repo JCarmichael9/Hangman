@@ -25,6 +25,7 @@
     background-color: rgb(165, 228, 152);
     border: 2px solid rgb(6, 78, 6);
     border-radius: 30px;
+    width: 300px;
 }
 
 .Medium {
@@ -32,6 +33,7 @@
     background-color: rgb(221, 220, 153);
     border: 2px solid goldenrod;
     border-radius: 30px;
+    width: 300px;
 }
 
 .Hard {
@@ -39,6 +41,7 @@
     background-color: rgb(241, 128, 128);
     border: 2px solid rgb(121, 8, 8);
     border-radius: 30px;
+    width: 300px;
 }
 
 body {
@@ -53,6 +56,7 @@ body {
     height: 85vh;
     width: 100vw;
 }
+
 
 
 .slide1 {
@@ -123,4 +127,10 @@ body {
     } to {
         opacity: 1;
     }
+}
+
+.pic {
+    position: absolute;
+    right: 0;
+    top: 50%;
 }
