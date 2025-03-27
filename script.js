@@ -135,7 +135,7 @@ function updateWrongGuess(guessedLetter) {
     new Audio('wantasprite.mp3').play()
 
     if (wrongGuesses === maxMistakes) {
-        endGame(false)
+        endGame()
     }
 }
 
@@ -155,7 +155,16 @@ updateUI()
 }
 
 function endGame(won) {
-    setTimeout(() => alert(message), 100)
+    difficultyBox.classList.add('d-none')
+    gameArea.classList.add('d-none')
+    document.getElementById('pic').classList.add('d-none')
+    if (won === true) {
+        setTimeout(() => endText.textContent = `You Won`, 100)
+        setTimeout(() => endContainer.classList.remove('d-none'), 100)
+    } else {
+        setTimeout(() => endText.textContent = `You Won`, 100)
+        setTimeout(() => endContainer.classList.remove('d-none'), 100)
+    }
 
 }
 
@@ -171,3 +180,14 @@ document.getElementById('letterInput').addEventListener('keydown', function (eve
     }
 })
 
+function restartGame() {
+    document.getElementById('gameArea').classList.add('d-none')
+    document.getElementById('gameArea').classList.remove('d-block')
+    document.getElementById('difficultyBox').classList.add('d-none')
+    document.getElementById('difficultyBox').classList.remove('d-block')
+    document.getElementById('difficultySelection').classList.remove('d-none')
+    document.getElementById('slippityDissapearrity').classList.remove('d-none')
+    document.getElementById('slippityDissapearrity').classList.add('d-inline-block')
+    document.getElementById('pic').classList.add('d-none')
+    document.getElementById('wrongLetters').textContent = 'Wrong Guesses:'
+}
