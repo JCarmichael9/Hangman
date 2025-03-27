@@ -74,12 +74,6 @@ function startGame(level) {
     document.getElementById('difficultySelection').classList.add('d-none')
     document.getElementById('slippityDissapearrity').classList.add('d-none')
     document.getElementById('slippityDissapearrity').classList.remove('d-inline-block')
-    document.getElementById('bigcontainer1').classList.add('justify-content-start')
-    document.getElementById('bigcontainer1').classList.remove('justify-content-center')
-    document.getElementById('bigcontainer2').classList.add('text-start')
-    document.getElementById('bigcontainer2').classList.remove('text-center')
-    document.getElementById('bigcontainer1').classList.add('ms-0')
-    document.getElementById('bigcontainer2').classList.add('ms-0')
     document.getElementById('letterInput').focus()
     document.getElementById('pic').classList.remove('d-none')
  
@@ -138,6 +132,7 @@ function updateWrongGuess(guessedLetter) {
     wrongGuesses++
     document.getElementById('wrongLetters').textContent += `${guessedLetter}`
     document.getElementById('shamrock').src = `imgs/image${6 - wrongGuesses}.jpeg`
+    new Audio('wantasprite.mp3').play()
 
     if (wrongGuesses === maxMistakes) {
         endGame(false)
@@ -146,6 +141,7 @@ function updateWrongGuess(guessedLetter) {
 
 function updateCorrectGuess(guessedLetter) {
     let newDisplayedWord = ''
+    new Audio('LEBROOOOOON.mp3').play()
     for (let i = 0; i < selectedWord.length; i++) {
         if (selectedWord[i] === guessedLetter) {
             newDisplayedWord += guessedLetter
