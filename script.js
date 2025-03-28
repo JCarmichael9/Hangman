@@ -131,7 +131,7 @@ function guessLetter() {
 function updateWrongGuess(guessedLetter) {
     wrongGuesses++
     document.getElementById('wrongLetters').textContent += `${guessedLetter}`
-    document.getElementById('shamrock').src = `imgs/image${6 - wrongGuesses}.jpeg`
+    document.getElementById('shamrock').src = `imgs/image${6 - wrongGuesses}.jpg`
     new Audio('wantasprite.mp3').play()
 
     if (wrongGuesses === maxMistakes) {
