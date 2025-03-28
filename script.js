@@ -57,7 +57,7 @@ let selectedWord = ''
 let displayWord = ''
 let wrongGuesses = 0
 let guessedLetters = []
-const maxMistakes = 6
+const maxMistakes = 5
 
 //& Start game function
 function startGame(level) {
@@ -151,7 +151,9 @@ function updateCorrectGuess(guessedLetter) {
     }
 displayWord = newDisplayedWord
 updateUI()
-
+if (!newDisplayedWord.includes('_')) {
+    endGame(true)
+}
 }
 
 function endGame(won) {
@@ -159,18 +161,14 @@ function endGame(won) {
     gameArea.classList.add('d-none')
     document.getElementById('pic').classList.add('d-none')
     if (won === true) {
-        setTimeout(() => endText.textContent = `You Won`, 100)
+        setTimeout(() => endText.textContent = `You Didn't Let LeBron Come, Great Job! The Word Was ${selectedWord}`, 100)
         setTimeout(() => endContainer.classList.remove('d-none'), 100)
     } else {
-        setTimeout(() => endText.textContent = `You Won`, 100)
-        setTimeout(() => endContainer.classList.remove('d-none'), 100)
+        
     }
 
 }
 
-function restartGame() {
-    location.reload()
-}
 
 
 document.getElementById('letterInput').addEventListener('keydown', function (event) {
@@ -181,6 +179,7 @@ document.getElementById('letterInput').addEventListener('keydown', function (eve
 })
 
 function restartGame() {
+    wrongGuesses = 0
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('gameArea').classList.remove('d-block')
     document.getElementById('difficultyBox').classList.add('d-none')
@@ -190,4 +189,6 @@ function restartGame() {
     document.getElementById('slippityDissapearrity').classList.add('d-inline-block')
     document.getElementById('pic').classList.add('d-none')
     document.getElementById('wrongLetters').textContent = 'Wrong Guesses:'
+    document.getElementById('endContainer').classList = 'd-none'
+    document.getElementById('shamrock').src = `imgs/image${6 - wrongGuesses}.jpg`
 }
