@@ -164,7 +164,11 @@ function endGame(won) {
         setTimeout(() => endText.textContent = `You Didn't Let LeBron Come, Great Job! The Word Was ${selectedWord}`, 100)
         setTimeout(() => endContainer.classList.remove('d-none'), 100)
     } else {
-        
+        setTimeout(() => endText2.textContent = `Where'd Lebron Go?`, 100)
+        setTimeout(() => endContainer2.classList.remove('d-none'), 100)
+        setTimeout(() => endText2.classList.add('appear'), 100)
+        setTimeout(() => theEnd.classList.remove('d-none'), 1000)
+        setTimeout(() => theEnd.classList.add('jumpscare'), 1000)
     }
 
 }
