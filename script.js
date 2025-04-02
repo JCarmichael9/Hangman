@@ -50,7 +50,7 @@ const wordList = [
     'draft'
 ];
 
-
+let lebronAudio = new Audio('lebronlebronlebronjames.mp3');
 
 //&declare variables
 let selectedWord = ''
@@ -76,7 +76,7 @@ function startGame(level) {
     document.getElementById('slippityDissapearrity').classList.remove('d-inline-block')
     document.getElementById('letterInput').focus()
     document.getElementById('pic').classList.remove('d-none')
- 
+    
 }
 
 function getRandomWord(level) {
@@ -163,14 +163,17 @@ function endGame(won) {
     if (won === true) {
         setTimeout(() => endText.textContent = `You Didn't Let LeBron Come, Great Job! The Word Was ${selectedWord}`, 100)
         setTimeout(() => endContainer.classList.remove('d-none'), 100)
+        lebronAudio.play();
+
     } else {
         setTimeout(() => endText2.textContent = `Where'd Lebron Go?`, 100)
         setTimeout(() => endContainer2.classList.remove('d-none'), 100)
+        setTimeout(() => endContainer2.classList.add('d-block'), 100)
         setTimeout(() => endText2.classList.add('appear'), 100)
-        setTimeout(() => theEnd.classList.remove('d-none'), 1000)
-        setTimeout(() => theEnd.classList.add('jumpscare'), 1000)
+        setTimeout(() => theEnd.classList.remove('d-none'), 100)
+        setTimeout(() => theEnd.classList.add('jumpscare'), 100)
+        setTimeout(() => new Audio('LEBROOOOOON2.mp3').play(), 5000)
     }
-
 }
 
 
@@ -195,4 +198,10 @@ function restartGame() {
     document.getElementById('wrongLetters').textContent = 'Wrong Guesses:'
     document.getElementById('endContainer').classList = 'd-none'
     document.getElementById('shamrock').src = `imgs/image${6 - wrongGuesses}.jpg`
+    document.getElementById('theEnd').classList.add('d-none')
+    document.getElementById('endText2').classList.remove('appear')
+    document.getElementById('endContainer2').classList.add('d-none')
+    document.getElementById('endContainer2').classList.remove('d-block')
+    lebronAudio.pause();
+  lebronAudio.currentTime = 0 
 }

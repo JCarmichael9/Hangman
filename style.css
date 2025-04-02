@@ -132,13 +132,13 @@ body {
 .appear {
     animation: appear 1s forwards;
     opacity: 0;
-    animation-delay: 4s;
+    animation-delay: 1s;
 }
 
 .jumpscare {
     animation: scary 0.00001s forwards;
     opacity: 0;
-    animation-delay: 10s;
+    animation-delay: 5s;
 }
 
 @keyframes scary {
@@ -157,11 +157,11 @@ body {
 
 #endContainer2 {
     position: absolute;
-    left: 50%;
+    left: 30%;
     top: 50%;
     animation: dissappear 0.00001s forwards;
     opacity: 1;
-    animation-delay: 9s;
+    animation-delay: 5s;
 }
 
 @keyframes dissappear {
