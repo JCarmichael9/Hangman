@@ -58,6 +58,8 @@ let displayWord = ''
 let wrongGuesses = 0
 let guessedLetters = []
 const maxMistakes = 5
+let wins = 0
+let losses = 0
 
 //& Start game function
 function startGame(level) {
@@ -161,11 +163,16 @@ function endGame(won) {
     gameArea.classList.add('d-none')
     document.getElementById('pic').classList.add('d-none')
     if (won === true) {
+        wins++
+        updateScore()
         setTimeout(() => endText.textContent = `You Didn't Let LeBron Come, Great Job! The Word Was ${selectedWord}`, 100)
         setTimeout(() => endContainer.classList.remove('d-none'), 100)
         lebronAudio.play();
-
+        
+        return
     } else {
+        losses++
+        updateScore()
         setTimeout(() => endText2.textContent = `Where'd Lebron Go?`, 100)
         setTimeout(() => endContainer2.classList.remove('d-none'), 100)
         setTimeout(() => endContainer2.classList.add('d-block'), 100)
@@ -173,6 +180,10 @@ function endGame(won) {
         setTimeout(() => theEnd.classList.remove('d-none'), 100)
         setTimeout(() => theEnd.classList.add('jumpscare'), 100)
         setTimeout(() => new Audio('LEBROOOOOON2.mp3').play(), 5000)
+        setTimeout(() => wins.classList.add('d-none'), 5000)
+        setTimeout(() => losses.classList.add('d-none'), 5000)
+        
+        return
     }
 }
 
@@ -204,4 +215,12 @@ function restartGame() {
     document.getElementById('endContainer2').classList.remove('d-block')
     lebronAudio.pause();
   lebronAudio.currentTime = 0 
+  document.getElementById('wins').classList.remove('d-none')
+  document.getElementById('losses').classList.remove('d-none')
+  updateScores()
+}
+
+function updateScore () {
+document.getElementById('wins').textContent = `You've Won ${wins} Times`
+document.getElementById('losses').textContent = `You've Lost ${losses} Times`
 }

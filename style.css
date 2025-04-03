@@ -108,6 +108,9 @@ body {
 
 .idk {
     color: gold;
+    font-family: "usurp", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .form-control:hover, .form-control:active, .form-control:focus {
@@ -171,4 +174,17 @@ body {
     to {
         opacity: 0;
     }
+}
+
+.container3 {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.scoreText {
+    font-family: "usurp", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: gold;
 }

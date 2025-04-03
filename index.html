@@ -21,7 +21,16 @@
             <img src="imgs/image1.jpg" id="endPic" />
         </button>
     </div>
+<div class="container3 position-absolute">
+    <div class="row fs-3">
+        <div class="col-6 scoreText text-start" id="wins">
+            
+        </div>
+        <div class="col-6 scoreText text-end" id="losses">
 
+        </div>
+    </div>
+</div>
     <div class="container d-flex justify-content-center align-items-center big" id="bigcontainer1">
         <div class="container text-center d-inline-block" id="bigcontainer2">
             <div class="row d-none" id="endContainer">
@@ -34,7 +43,7 @@
                     <div class="row my-5">
                         <div class="col-12">
                             <button id="restartBtn"
-                                class="btn btn-transparent difficulty-btn text-danger border border-1 border-danger rounded scale2"
+                                 class="btn btn-transparent difficulty-btn text-danger border border-1 border-danger rounded scale2"
                                 onclick="restartGame()">
                                 Restart Game
                             </button>
@@ -59,17 +68,17 @@
                 <button
                     class="btn btn-transparent difficulty-btn text-success border border-1 border-success rounded scale mx-2"
                     onclick="startGame('Easy')">
-                    Easy
+                    <b>Easy</b>
                 </button>
                 <button
                     class="btn btn-transparent difficulty-btn text-warning border border-1 border-warning rounded scale me-2"
                     onclick="startGame('Medium')">
-                    Medium
+                    <b>Medium</b>
                 </button>
                 <button
                     class="btn btn-transparent difficulty-btn text-danger border border-1 border-danger rounded scale"
                     onclick="startGame('Hard')">
-                    Hard
+                    <b>Hard</b>
                 </button>
             </div>
             <div id="difficultyBox" class="mt-4 p-3 fw-bold d-none mx-auto"></div>
